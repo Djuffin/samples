@@ -65,9 +65,10 @@ function handleDataAvailable(event) {
 
 function startRecording() {
   recordedBlobs = [];
-  let options = {mimeType: 'video/webm;codecs=vp9,opus'};
+  let options = {mimeType: 'video/webm;codecs=h264,opus'};
   if (!MediaRecorder.isTypeSupported(options.mimeType)) {
     console.error(`${options.mimeType} is not supported`);
+    /*
     options = {mimeType: 'video/webm;codecs=vp8,opus'};
     if (!MediaRecorder.isTypeSupported(options.mimeType)) {
       console.error(`${options.mimeType} is not supported`);
@@ -76,7 +77,7 @@ function startRecording() {
         console.error(`${options.mimeType} is not supported`);
         options = {mimeType: ''};
       }
-    }
+    }*/
   }
 
   try {
